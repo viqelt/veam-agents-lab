@@ -25,6 +25,12 @@ process.env.VITE_APP_LOGO_URL ??= process.env.OVERVIEW_LOGO_URL ?? 'https://publ
 
 // https://vitejs.dev/config/
 export default defineConfig(({ command }) => {
+  return {
+    base: '/veam-agents-lab/',   // ← زيد هذا السطر
+    plugins: [...],
+    // باقي الكونفيغ...
+  };
+});
   const blogPrerenderRoutes = command === 'build' ? getBlogRoutes() : [];
 
   return {
